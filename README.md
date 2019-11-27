@@ -8,35 +8,40 @@ This is a test assignment
 - Git
 
 ## How to install
-
+```
 git clone git@github.com:Hmmka/api-test.git
-
+```
 Create a new .env file in the same folder where you have cloned the project. 
 You have to fill this file with mysql credentials.
 
+```
 DB_HOST=localhost
 DB_USER=your_user_name
 DB_PASSWORD=users_password
 DB_NAME=database_name
 DB_PORT=3306
+```
 
 Open browser.
+```
 run install.php file.
 http://localhost/install.php 
 delete install.php from the project. 
+```
 The product table and some values would be created in the mysql database.
 
 ## How to use
 There are three parameters and five methods available in the API.
-{id} - integer
-name - string no longer than 100 chars.
-price - decimal with 2 digits
+- {id} - integer
+- name - string no longer than 100 chars.
+- price - decimal with 2 digits
 
 You are able to see the GET results in the browser, if you open the link http://localhost/product/{id}. 
 However, you have to send methods and the body via headers to have an access to the create, update and delete options. 
 
 ###### Methods:
 
+```
 Return all products:
 GET /product
 
@@ -59,7 +64,7 @@ Delete an existing product:
 DELETE /person/{id}
 
 Request Method: DELETE
-
+```
 ---------------
 
 Javasctipt example:
