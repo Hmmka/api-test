@@ -30,7 +30,7 @@ run install.php file.
 http://localhost/install.php 
 delete install.php from the project. 
 ```
-The product table and some values would be created in the mysql database.
+The product table and some values would be created in the mysql database. (There is mysql dump db.sql if needed.)
 
 ## How to use
 There are three parameters and five methods available in the API.
