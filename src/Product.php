@@ -6,6 +6,7 @@ class Product extends Service
 {
     protected $tableName = 'product';
     public static $serviceName = 'product';
+    protected $requiredFields = array('name', 'price');
 
     public function findAll()
     {
@@ -39,6 +40,7 @@ class Product extends Service
 
     public function create(array $data)
     {
+        $this->checkDataExistence($data);
         $sql = "INSERT INTO $this->tableName (name, price) VALUES (:name, :price);";
         try {
             $statement = $this->db->prepare($sql);
@@ -54,6 +56,7 @@ class Product extends Service
 
     public function update(int $productId, array $data)
     {
+        $this->checkDataExistence($data);
         $sql = "UPDATE $this->tableName SET name = :name, price = :price WHERE id = :id;";
         try {
             $statement = $this->db->prepare($sql);
