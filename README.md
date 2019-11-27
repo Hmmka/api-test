@@ -12,6 +12,8 @@ This is a test assignment
 ## How to install
 ```
 git clone git@github.com:Hmmka/api-test.git
+cd api-test
+composer install
 ```
 Create a new .env file in the same folder where you have cloned the project. 
 You have to fill this file with mysql credentials.
