@@ -28,6 +28,6 @@ try {
 
     $api = new Api($product);
     $api->run();
-} catch (Exception $e) {
+} catch (\Exception $e) {
     echo json_encode(array('error' => $e->getMessage()));
 }
