@@ -42,10 +42,10 @@ However, you have to send methods and the body via headers to have an access to 
 ###### Methods:
 
 ```
-Return all products:
+**Return all products:**
 GET /product
 
-Return a singe product by id:
+**Return a singe product by id:**
 GET /product/{id}
 
 Create a new product:
