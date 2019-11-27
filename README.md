@@ -71,7 +71,7 @@ Request Method: DELETE
 ```
 ---------------
 
-Javasctipt example:
+Javascript example:
 
 ```
 async function makeFetch() {
