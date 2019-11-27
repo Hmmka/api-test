@@ -1,4 +1,4 @@
-This is test assignment
+This is a test assignment
 ## Prerequisites
 
 - PHP7
