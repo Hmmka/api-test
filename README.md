@@ -69,7 +69,7 @@ Request Method: PUT
 Request payload: { name: 'a new name of the product goes nere', price: 'a new price goes here' }
 
 Delete an existing product:
-DELETE /person/{id}
+DELETE /product/{id}
 
 Request Method: DELETE
 ```
