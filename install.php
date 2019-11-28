@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * This is unnesessary file. Run it to create tables in the database. 
+ * Delete this file when complete.
+ */
 require 'vendor/autoload.php';
 
 use Dotenv\Dotenv;

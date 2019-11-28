@@ -13,6 +13,9 @@ class Api
     protected $responseBody = null;
     protected $responseStatus = 'HTTP/1.1 200 OK';
 
+    /**
+     * @param Service $product
+     */
     public function __construct(Service $product)
     {
         $this->service = $product;
@@ -33,11 +36,18 @@ class Api
         }
     }
 
+    /**
+     * @param array $json
+     * @return void
+     */
     protected function sendData($json)
     {
         echo json_encode(array($this->service::$serviceName => $json));
     }
 
+    /**
+     * @return void
+     */
     public function run()
     {
         if (($this->method == 'PUT' || $this->method == 'DELETE') && !$this->id) {
@@ -61,8 +71,11 @@ class Api
             case 'DELETE':
                 $this->responseBody = $this->service->delete($this->id);
                 break;
+            case 'OPTIONS':
+                echo json_encode("{mes: 'This is working just fine'}");
             default:
-                throw new \Exception("Missing method in the '" . $this->service::$serviceName . "' service. (magic)");
+                throw new \Exception("Allowed methods: GET, PUT, POST, DELETE");
+                break;
         }
 
         header($this->responseStatus);
@@ -71,6 +84,10 @@ class Api
         }
     }
 
+    /**
+     * @param [type] $value
+     * @return void
+     */
     protected function checkId($value)
     {
         if (!filter_var($value, FILTER_VALIDATE_INT)) {

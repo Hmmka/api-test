@@ -2,6 +2,9 @@
 
 namespace Src;
 
+/**
+ * Extend this class if you would like to add a new service.
+ */
 abstract class Service
 {
     protected $tableName;
@@ -15,11 +18,18 @@ abstract class Service
     abstract public function findAll();
     abstract public function delete(int $id);
 
+    /**
+     * @param Database $db
+     */
     public function __construct(Database $db)
     {
         $this->db = $db->getLink();
     }
 
+    /**
+     * @param string $value
+     * @return string
+     */
     protected function cleanInput($value = "")
     {
         $value = trim($value);
@@ -30,6 +40,10 @@ abstract class Service
         return $value;
     }
 
+    /**
+     * @param array $data
+     * @return void
+     */
     protected function checkDataExistence(array $data)
     {
         $missingKeys = [];

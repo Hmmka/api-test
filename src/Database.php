@@ -6,6 +6,13 @@ class Database
 {
     protected $db = null;
 
+    /**
+     * @param string $host
+     * @param string $user
+     * @param string $password
+     * @param string $dbname
+     * @param int $port
+     */
     public function __construct($host, $user, $password, $dbname, $port)
     {
         try {
@@ -20,6 +27,9 @@ class Database
         }
     }
 
+    /**
+     * @return object
+     */
     public function getLink()
     {
         return $this->db;
