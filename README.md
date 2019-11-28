@@ -96,7 +96,7 @@ async function makeFetch() {
 }
 ```
 
-**Find all products: **
+**Find all products:**
 ```
 async function makeFetch() {
     const response = await fetch("http://php-ex-192-168-0-26.nip.io/product");
@@ -105,7 +105,7 @@ async function makeFetch() {
 }
 ```
 
-**Find specific product: **
+**Find specific product:**
 ```
 async function makeFetch() {
     const response = await fetch("http://php-ex-192-168-0-26.nip.io/product/3");
