@@ -75,20 +75,57 @@ Request Method: DELETE
 ```
 ---------------
 
-Javascript example:
+## Javascript examples:
 
+**Create product:**
 ```
 async function makeFetch() {
-    let item = {};
-    item.name = "Addidas trainings";
-    item.price = 79,95;
-
     const response = await fetch(
-        "http://localhost/product/",
+        "http://localhost/product",
         {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(item)
+            body: JSON.stringify({
+                name: "Addidas trainings",
+                price: 79,95
+            })
+        }
+    );
+    const data = await response.json();
+    console.log(data);
+}
+```
+
+**Find all products: **
+```
+async function makeFetch() {
+    const response = await fetch("http://php-ex-192-168-0-26.nip.io/product");
+    const data = await response.json();
+    console.log(data);
+}
+```
+
+**Find specific product: **
+```
+async function makeFetch() {
+    const response = await fetch("http://php-ex-192-168-0-26.nip.io/product/3");
+    const data = await response.json();
+    console.log(data);
+}
+```
+
+**Update product:**
+```
+async function makeFetch() {
+    const response = await fetch(
+        "http://localhost/product/1",
+        {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                name: "Nike trainings",
+                price: 56
+            })
         }
     );
     const data = await response.json();
