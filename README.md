@@ -77,6 +77,24 @@ Request Method: DELETE
 
 ## Javascript examples:
 
+**Find all products:**
+```
+async function makeFetch() {
+    const response = await fetch("http://php-ex-192-168-0-26.nip.io/product");
+    const data = await response.json();
+    console.log(data);
+}
+```
+
+**Find specific product:**
+```
+async function makeFetch() {
+    const response = await fetch("http://php-ex-192-168-0-26.nip.io/product/3");
+    const data = await response.json();
+    console.log(data);
+}
+```
+
 **Create product:**
 ```
 async function makeFetch() {
@@ -96,24 +114,6 @@ async function makeFetch() {
 }
 ```
 
-**Find all products:**
-```
-async function makeFetch() {
-    const response = await fetch("http://php-ex-192-168-0-26.nip.io/product");
-    const data = await response.json();
-    console.log(data);
-}
-```
-
-**Find specific product:**
-```
-async function makeFetch() {
-    const response = await fetch("http://php-ex-192-168-0-26.nip.io/product/3");
-    const data = await response.json();
-    console.log(data);
-}
-```
-
 **Update product:**
 ```
 async function makeFetch() {
@@ -126,6 +126,20 @@ async function makeFetch() {
                 name: "Nike trainings",
                 price: 56
             })
+        }
+    );
+    const data = await response.json();
+    console.log(data);
+}
+```
+
+**Delete specific product:**
+```
+async function makeFetch() {
+    const response = await fetch(
+        "http://localhost/product/3",
+        {
+            method: "DELETE"
         }
     );
     const data = await response.json();
