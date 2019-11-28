@@ -28,6 +28,7 @@ class Api
         }
 
         if (isset($this->uri[2])) {
+            $this->checkId($this->uri[2]);
             $this->id = intval($this->uri[2]);
         }
     }
@@ -40,7 +41,7 @@ class Api
     public function run()
     {
         if (($this->method == 'PUT' || $this->method == 'DELETE') && !$this->id) {
-            throw new \Exception("Missing " . $this->service::$serviceName . " id");
+            throw new \Exception("Missing " . $this->service::$serviceName . " id.");
         }
         switch ($this->method) {
             case 'GET':
@@ -67,6 +68,13 @@ class Api
         header($this->responseStatus);
         if ($this->responseBody) {
             $this->sendData($this->responseBody);
+        }
+    }
+
+    protected function checkId($value)
+    {
+        if (!filter_var($value, FILTER_VALIDATE_INT)) {
+            throw new \Exception($this->service::$serviceName . " id should be an integer.");
         }
     }
 }
