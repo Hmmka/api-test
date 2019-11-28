@@ -49,8 +49,12 @@ However, you have to send methods and the body via headers to have an access to 
 Return all products:
 GET /product
 
+Request Method: GET
+
 Return a singe product by id:
 GET /product/{id}
+
+Request Method: GET
 
 Create a new product:
 POST /product
