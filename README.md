@@ -105,7 +105,7 @@ async function makeFetch() {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 name: "Addidas trainings",
-                price: 79,95
+                price: 79.95
             })
         }
     );
